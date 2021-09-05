@@ -1,11 +1,12 @@
-package com.example.stockproject
+package com.example.stockproject.screens
 
-import CustomAdapter
+import com.example.stockproject.adapter.CustomAdapter
 import android.content.*
 import android.os.*
 import android.widget.*
 import androidx.appcompat.app.*
 import androidx.recyclerview.widget.*
+import com.example.stockproject.*
 import com.example.stockproject.model.*
 import com.example.stockproject.provider.*
 import com.example.stockproject.service.*
@@ -39,7 +40,7 @@ class PopularStocks : AppCompatActivity() {
 
                 val adapter = CustomAdapter(title,content).apply {
                     onStockNavigation = { stock, s ->
-                        val intent = Intent(applicationContext,StockDetail::class.java)
+                        val intent = Intent(applicationContext, StockDetail::class.java)
                         intent.putExtra("stock", stock)
                         intent.putExtra("title",s)
                         startActivity(intent)

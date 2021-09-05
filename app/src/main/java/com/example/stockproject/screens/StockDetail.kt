@@ -1,8 +1,9 @@
-package com.example.stockproject
+package com.example.stockproject.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.example.stockproject.*
 import com.example.stockproject.model.*
 
 class StockDetail : AppCompatActivity() {
