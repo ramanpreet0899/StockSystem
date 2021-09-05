@@ -5,4 +5,5 @@
     <string name="name">Name</string>
     <string name="daily_low">Daily Low</string>
     <string name="daily_high">Daily High</string>
+    <string name="popular_stocks">Popular Stocks</string>
 </resources>

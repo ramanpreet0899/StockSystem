@@ -8,6 +8,8 @@ import com.example.stockproject.model.*
 class StockDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_button_foreground)
         setContentView(R.layout.activity_stock_detail)
 
         val symbolTv : TextView = findViewById(R.id.detail_symbol_content)
@@ -17,6 +19,7 @@ class StockDetail : AppCompatActivity() {
         val dailyHighTv :TextView = findViewById(R.id.detail_daily_high_content)
 
         val title = intent.getStringExtra("title")
+        supportActionBar?.title = title
         symbolTv.text = title
 
         val stock = intent.getSerializableExtra("stock") as Stock
