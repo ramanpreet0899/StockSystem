@@ -1,15 +1,15 @@
 package com.example.stockproject.screens
 
-import com.example.stockproject.adapter.CustomAdapter
 import android.content.*
 import android.os.*
 import android.widget.*
 import androidx.appcompat.app.*
-import androidx.recyclerview.widget.*
 import com.example.stockproject.*
+import com.example.stockproject.adapter.*
 import com.example.stockproject.model.*
 import com.example.stockproject.provider.*
 import com.example.stockproject.service.*
+import kotlinx.android.synthetic.main.popular_stocks.*
 import retrofit2.*
 
 
@@ -20,8 +20,6 @@ class PopularStocks : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.title = getString(R.string.popular_stocks)
         setContentView(R.layout.popular_stocks)
-
-        val rView = findViewById<RecyclerView>(R.id.popular_stocks_content_view)
 
         val provider = StockProvider()
         val service = provider.retrofit.create(StockService::class.java)
@@ -38,15 +36,16 @@ class PopularStocks : AppCompatActivity() {
                     content.addAll(it.values)
                 }
 
-                val adapter = CustomAdapter(title,content).apply {
-                    onStockNavigation = { stock, s ->
-                        val intent = Intent(applicationContext, StockDetail::class.java)
-                        intent.putExtra("stock", stock)
-                        intent.putExtra("title",s)
-                        startActivity(intent)
+                runOnUiThread {
+                    val adapter = CustomAdapter(title,content).apply {
+                        onStockNavigation = { s ->
+                            val intent = Intent(applicationContext, StockDetail::class.java)
+                            intent.putExtra("title",s)
+                            startActivity(intent)
+                        }
                     }
+                    popular_stocks_content_view.adapter = adapter
                 }
-                rView.adapter = adapter
             }
 
             override fun onFailure(call: Call<Map<String, Stock>>?, t: Throwable?) {
@@ -54,6 +53,7 @@ class PopularStocks : AppCompatActivity() {
             }
 
         })
+
 
     }
 }
