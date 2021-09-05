@@ -1,3 +1,5 @@
+package com.example.stockproject.adapter
+
 import android.annotation.*
 import android.view.*
 import android.widget.*

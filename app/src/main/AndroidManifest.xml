@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StockProject">
-        <activity android:name=".StockDetail"></activity>
-        <activity android:name=".PopularStocks">
+        <activity android:name=".screens.StockDetail"></activity>
+        <activity android:name=".screens.PopularStocks">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
