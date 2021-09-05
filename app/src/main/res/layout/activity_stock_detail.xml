@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".StockDetail">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_symbol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/symbol"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/detail_symbol_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_symbol_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detail_symbol"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/detail_symbol_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_name_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detail_symbol"
+        app:layout_constraintTop_toTopOf="@id/detail_name"
+        tools:text="@string/symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_current_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/current_price"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/detail_symbol_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_current_price_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detail_symbol"
+        app:layout_constraintTop_toTopOf="@id/detail_current_price"
+        tools:text="@string/symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_daily_low"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/daily_low"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/detail_daily_low_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_current_price" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_daily_low_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detail_symbol"
+        app:layout_constraintTop_toTopOf="@id/detail_daily_low"
+        tools:text="@string/symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_daily_high"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/daily_high"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/detail_daily_high_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_daily_low" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_daily_high_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/detail_symbol"
+        app:layout_constraintTop_toTopOf="@id/detail_daily_high"
+        tools:text="@string/symbol" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

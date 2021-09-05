@@ -1,6 +1,7 @@
 package com.example.stockproject
 
 import CustomAdapter
+import android.content.*
 import android.os.*
 import android.util.*
 import androidx.appcompat.app.*
@@ -41,7 +42,14 @@ class PopularStocks : AppCompatActivity() {
                     content.addAll(it.values)
                 }
 
-                val adapter = CustomAdapter(title,content)
+                val adapter = CustomAdapter(title,content).apply {
+                    onStockNavigation = { stock, s ->
+                        val intent = Intent(applicationContext,StockDetail::class.java)
+                        intent.putExtra("stock", stock)
+                        intent.putExtra("title",s)
+                        startActivity(intent)
+                    }
+                }
                 rView.adapter = adapter
             }
 
