@@ -11,7 +11,7 @@ import com.example.stockproject.model.*
 class CustomAdapter(private val title: MutableList<String>,private val content : MutableList<Stock>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-    var onStockNavigation:  ((Stock, String) -> Unit)? = null
+    var onStockNavigation:  ((String) -> Unit)? = null
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val cardView :CardView = view.findViewById(R.id.ps_card_view)
@@ -36,7 +36,7 @@ class CustomAdapter(private val title: MutableList<String>,private val content :
 
         viewHolder.cardView.setOnClickListener {
             onStockNavigation?.let{
-                it(content[position],title[position])
+                it(title[position])
             }
         }
     }
