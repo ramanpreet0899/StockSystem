@@ -41,7 +41,8 @@ class PopularStocks : AppCompatActivity() {
                             ) {
                                 title.clear()
                                 content.clear()
-                                response!!.body()?.let {
+                                response!!.body()?.let  {
+
                                     title.addAll(it.keys)
                                     content.addAll(it.values)
                                 }
@@ -67,7 +68,7 @@ class PopularStocks : AppCompatActivity() {
                 }
             }
         }
-        timer.schedule(doAsynchronousTask, 0, 20000)
+        timer.schedule(doAsynchronousTask, 0, 3000)
     }
 
     private fun updateViews() {

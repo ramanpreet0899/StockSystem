@@ -16,6 +16,10 @@ import java.util.*
 
 class StockDetail : AppCompatActivity() {
     private lateinit var stock: Stock
+
+    val handler = Handler(Looper.getMainLooper())
+    private val timer = Timer()
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -29,8 +33,6 @@ class StockDetail : AppCompatActivity() {
         val provider = StockProvider()
         val service = provider.retrofit.create(StockService::class.java)
 
-        val handler = Handler(Looper.getMainLooper())
-        val timer = Timer()
         val doAsynchronousTask: TimerTask = object : TimerTask() {
             override fun run() {
                 handler.post {
@@ -64,7 +66,7 @@ class StockDetail : AppCompatActivity() {
                 }
             }
         }
-        timer.schedule(doAsynchronousTask, 0, 20000)
+        timer.schedule(doAsynchronousTask, 0, 3000)
     }
 
     private fun updateViews(s: Stock) {
